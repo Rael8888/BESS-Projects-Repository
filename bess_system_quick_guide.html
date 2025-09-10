@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Strategic Investor's Guide to BESS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+        
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#003f5c] mb-4">The Strategic Investor's Guide to Battery Energy Storage Systems (BESS)</h1>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">An infographic providing a strategic framework for evaluating, analyzing, and conducting due diligence on BESS investment opportunities in the evolving energy landscape.</p>
+        </header>
+
+        <main class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <div class="md:col-span-2 bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-bold text-[#003f5c] mb-4">The BESS Opportunity</h2>
+                <p class="text-gray-700 mb-4">As the world shifts to renewable energy, the grid faces unprecedented stability challenges. BESS provides a critical solution by balancing supply and demand, offering investors a unique, bankable asset class poised for significant growth. These systems are not just technology; they are a foundational pillar of the modern grid.</p>
+                <div class="text-center p-6 bg-[#003f5c] rounded-lg text-white">
+                    <span class="text-5xl font-bold">1,000+ GW</span>
+                    <p class="text-xl mt-2">Projected Global Energy Storage by 2040</p>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-xl font-bold text-[#7a5195] mb-2">Visual 1: Intraday Arbitrage Opportunity</h3>
+                <p class="text-gray-600 mb-4">BESS units profit by charging when electricity prices are low (e.g., midday solar surplus) and discharging when prices are high (e.g., evening demand peak). This chart illustrates the typical daily "duck curve" that creates this arbitrage potential.</p>
+                <div class="chart-container">
+                    <canvas id="arbitrageChart"></canvas>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-xl font-bold text-[#7a5195] mb-2">Visual 2: Revenue Stacking for Profitability</h3>
+                <p class="text-gray-600 mb-4">A key to BESS profitability is "revenue stacking" — combining multiple income sources from a single asset. This chart shows a typical breakdown, balancing volatile arbitrage revenue with more stable, contracted income streams.</p>
+                <div class="chart-container">
+                    <canvas id="revenueStackChart"></canvas>
+                </div>
+            </div>
+
+            <div class="md:col-span-2 bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-bold text-[#003f5c] mb-4">Key Financial Metrics & Analysis</h2>
+                 <p class="text-gray-700 mb-6">Evaluating BESS projects requires a sophisticated approach beyond simple ROI. The interplay of market volatility, operational assumptions, and technology degradation demands robust sensitivity analysis on core financial metrics.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+                    <div class="bg-gray-100 p-4 rounded-lg">
+                        <h4 class="text-lg font-semibold text-[#bc5090]">IRR (Internal Rate of Return)</h4>
+                        <p class="text-3xl font-bold text-[#bc5090]">12-18%</p>
+                        <p class="text-sm text-gray-600">Typical Project Target</p>
+                    </div>
+                    <div class="bg-gray-100 p-4 rounded-lg">
+                        <h4 class="text-lg font-semibold text-[#ff764a]">LCOS (Levelized Cost of Storage)</h4>
+                        <p class="text-3xl font-bold text-[#ff764a]">$150-$250</p>
+                        <p class="text-sm text-gray-600">Per MWh Lifetime Average</p>
+                    </div>
+                    <div class="bg-gray-100 p-4 rounded-lg">
+                        <h4 class="text-lg font-semibold text-[#ffa600]">Payback Period</h4>
+                        <p class="text-3xl font-bold text-[#ffa600]">5-8 Years</p>
+                        <p class="text-sm text-gray-600">Typical Project Timeline</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                 <h3 class="text-xl font-bold text-[#7a5195] mb-2">Visual 3: NPV Sensitivity Analysis</h3>
+                <p class="text-gray-600 mb-4">Net Present Value (NPV) is highly sensitive to market and operational variables. This matrix highlights how changes in key assumptions can impact a project's overall value, informing risk assessment.</p>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr>
+                                <th class="py-2 px-3 bg-gray-100 font-bold uppercase text-sm text-gray-600 border-b">Variable</th>
+                                <th class="py-2 px-3 bg-gray-100 font-bold uppercase text-sm text-red-500 border-b text-center">Pessimistic</th>
+                                <th class="py-2 px-3 bg-gray-100 font-bold uppercase text-sm text-gray-600 border-b text-center">Base Case</th>
+                                <th class="py-2 px-3 bg-gray-100 font-bold uppercase text-sm text-green-500 border-b text-center">Optimistic</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="hover:bg-gray-50">
+                                <td class="py-2 px-3 border-b border-gray-200">Wholesale Price</td>
+                                <td class="py-2 px-3 border-b border-gray-200 text-center text-red-500">-$2.5M</td>
+                                <td class="py-2 px-3 border-b border-gray-200 text-center">$5.1M</td>
+                                <td class="py-2 px-3 border-b border-gray-200 text-center text-green-500">$12.3M</td>
+                            </tr>
+                             <tr class="hover:bg-gray-50">
+                                <td class="py-2 px-3 border-b border-gray-200">Daily Cycles</td>
+                                <td class="py-2 px-3 border-b border-gray-200 text-center text-red-500">$1.2M</td>
+                                <td class="py-2 px-3 border-b border-gray-200 text-center">$5.1M</td>
+                                <td class="py-2 px-3 border-b border-gray-200 text-center text-green-500">$7.8M</td>
+                            </tr>
+                             <tr class="hover:bg-gray-50">
+                                <td class="py-2 px-3 border-b border-gray-200">Initial CAPEX</td>
+                                <td class="py-2 px-3 border-b border-gray-200 text-center text-red-500">$2.1M</td>
+                                <td class="py-2 px-3 border-b border-gray-200 text-center">$5.1M</td>
+                                <td class="py-2 px-3 border-b border-gray-200 text-center text-green-500">$8.2M</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-xl font-bold text-[#7a5195] mb-2">Visual 4: Battery Degradation Curve</h3>
+                <p class="text-gray-600 mb-4">All batteries lose capacity over time. This projected degradation curve is critical for long-term revenue forecasting, as it directly impacts the amount of energy a BESS can sell over its 15-20 year lifespan.</p>
+                <div class="chart-container">
+                    <canvas id="degradationChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="md:col-span-2 bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-bold text-[#003f5c] mb-4">Due Diligence Checklist: A Structured Approach</h2>
+                <p class="text-gray-700 mb-6">A rigorous, multi-faceted due diligence process is non-negotiable. It mitigates risk by thoroughly vetting the project's technical, financial, and regulatory foundations before investment.</p>
+                <div class="space-y-4 md:space-y-0 md:flex md:space-x-4 text-center">
+                    <div class="flex-1">
+                        <div class="p-4 bg-[#ef5675] text-white rounded-full w-16 h-16 mx-auto flex items-center justify-center text-2xl font-bold mb-2">1</div>
+                        <h4 class="font-semibold text-lg">Technical</h4>
+                        <p class="text-sm text-gray-600">Technology Choice, Siting, Interconnection, Safety, Warranties</p>
+                    </div>
+                    <div class="hidden md:block self-center text-2xl text-gray-300 font-light">&rarr;</div>
+                    <div class="flex-1">
+                        <div class="p-4 bg-[#ff764a] text-white rounded-full w-16 h-16 mx-auto flex items-center justify-center text-2xl font-bold mb-2">2</div>
+                        <h4 class="font-semibold text-lg">Financial</h4>
+                        <p class="text-sm text-gray-600">Revenue Assumptions, CAPEX/OPEX Breakdown, Financing Terms</p>
+                    </div>
+                    <div class="hidden md:block self-center text-2xl text-gray-300 font-light">&rarr;</div>
+                    <div class="flex-1">
+                        <div class="p-4 bg-[#ffa600] text-white rounded-full w-16 h-16 mx-auto flex items-center justify-center text-2xl font-bold mb-2">3</div>
+                        <h4 class="font-semibold text-lg">Regulatory</h4>
+                        <p class="text-sm text-gray-600">Permitting Status, Market Rules, Contract Review (EPC, O&M, PPA)</p>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <footer class="text-center mt-12">
+            <p class="text-gray-600">This infographic provides a high-level overview for investment analysis in the BESS sector. Thorough, project-specific due diligence is essential.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const brilliantBluesPalette = ['#003f5c', '#7a5195', '#ef5675', '#ff764a', '#ffa600', '#374c80', '#bc5090'];
+
+        const wrapLabel = (label, maxWidth = 16) => {
+            if (label.length <= maxWidth) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + ' ' + word).trim().length > maxWidth) {
+                    lines.push(currentLine.trim());
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            });
+            if (currentLine) {
+                lines.push(currentLine.trim());
+            }
+            return lines;
+        };
+        
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            }
+            return label;
+        };
+
+        const defaultChartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        padding: 20,
+                        font: {
+                            family: "'Inter', sans-serif"
+                        }
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    },
+                    backgroundColor: '#003f5c',
+                    titleFont: {
+                        size: 14,
+                        family: "'Inter', sans-serif"
+                    },
+                    bodyFont: {
+                        size: 12,
+                        family: "'Inter', sans-serif"
+                    },
+                    padding: 10
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    grid: {
+                        color: '#e5e7eb'
+                    },
+                    ticks: {
+                       font: {
+                            family: "'Inter', sans-serif"
+                        }
+                    }
+                },
+                x: {
+                    grid: {
+                        display: false
+                    },
+                    ticks: {
+                        font: {
+                            family: "'Inter', sans-serif"
+                        }
+                    }
+                }
+            }
+        };
+
+        new Chart(document.getElementById('arbitrageChart'), {
+            type: 'line',
+            data: {
+                labels: ['12am', '2am', '4am', '6am', '8am', '10am', '12pm', '2pm', '4pm', '6pm', '8pm', '10pm'],
+                datasets: [{
+                    label: 'Electricity Price ($/MWh)',
+                    data: [35, 30, 28, 40, 55, 60, 25, 20, 30, 85, 95, 70],
+                    borderColor: brilliantBluesPalette[2],
+                    backgroundColor: 'rgba(239, 86, 117, 0.1)',
+                    fill: true,
+                    tension: 0.4
+                }, {
+                    label: 'BESS Charging',
+                    data: [null, null, null, null, null, null, 25, 20, 30, null, null, null],
+                    type: 'bar',
+                    backgroundColor: 'rgba(255, 166, 0, 0.6)',
+                }, {
+                    label: 'BESS Discharging',
+                    data: [null, null, null, null, null, null, null, null, null, 85, 95, 70],
+                    type: 'bar',
+                    backgroundColor: 'rgba(0, 63, 92, 0.6)',
+                }]
+            },
+            options: { ...defaultChartOptions,
+                scales: {
+                    y: { ...defaultChartOptions.scales.y,
+                        ticks: {
+                            callback: function(value) {
+                                return '$' + value;
+                            }
+                        }
+                    },
+                    x: defaultChartOptions.scales.x
+                }
+            }
+        });
+
+        new Chart(document.getElementById('revenueStackChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Projected Annual Revenue'],
+                datasets: [
+                    { label: 'Intraday Arbitrage', data: [45], backgroundColor: brilliantBluesPalette[0] },
+                    { label: 'Ancillary Services', data: [25], backgroundColor: brilliantBluesPalette[1] },
+                    { label: 'Capacity Markets', data: [20], backgroundColor: brilliantBluesPalette[2] },
+                    { label: 'Other Services', data: [10], backgroundColor: brilliantBluesPalette[4] }
+                ]
+            },
+            options: { ...defaultChartOptions,
+                scales: {
+                    x: { ...defaultChartOptions.scales.x, stacked: true },
+                    y: { ...defaultChartOptions.scales.y,
+                        stacked: true,
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('degradationChart'), {
+            type: 'line',
+            data: {
+                labels: ['Year 1', 'Year 3', 'Year 5', 'Year 7', 'Year 9', 'Year 11', 'Year 13', 'Year 15'],
+                datasets: [{
+                    label: 'Battery Capacity (%)',
+                    data: [100, 97, 94, 91, 88, 85, 82, 80],
+                    borderColor: brilliantBluesPalette[3],
+                    backgroundColor: 'rgba(255, 118, 74, 0.1)',
+                    fill: true,
+                    tension: 0.1
+                }]
+            },
+            options: { ...defaultChartOptions,
+                 scales: {
+                    y: { ...defaultChartOptions.scales.y,
+                        min: 75,
+                        max: 101,
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        }
+                    },
+                    x: defaultChartOptions.scales.x
+                }
+            }
+        });
+    </script>
+</body>
+</html>
