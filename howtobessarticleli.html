@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BESS Financial Strategy Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        :root {
+            --bg-dark: #0A0A0A;
+            --bg-card: #1F2937;
+            --brand-neon: #7CFC00;
+            --brand-dark-green: #004D40;
+            --text-light: #F0F0F0;
+            --text-medium: #9CA3AF;
+            --text-dark: #1F2937;
+            --accent-red: #DC2626;
+            --accent-blue: #3B82F6;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+        }
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--brand-dark-green);
+            box-shadow: 0 0 25px rgba(124, 252, 0, 0.1);
+        }
+        .text-neon {
+            color: var(--brand-neon);
+        }
+        .bg-neon {
+            background-color: var(--brand-neon);
+        }
+        .border-neon {
+            border-color: var(--brand-neon);
+        }
+        .text-dark-green {
+            color: var(--brand-dark-green);
+        }
+        .bg-dark-green {
+            background-color: var(--brand-dark-green);
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 400px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 450px;
+                max-height: 450px;
+            }
+        }
+        .stat-card {
+            background-color: #111827;
+            border: 2px solid var(--brand-dark-green);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            text-align: center;
+        }
+        .stat-title {
+            color: var(--text-medium);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        .stat-value {
+            font-size: 3rem;
+            font-weight: 900;
+            line-height: 1;
+            margin-top: 0.5rem;
+        }
+    </style>
+    
+    <!-- Chosen Palette: RENEWD Dark Mode (Neon: #7CFC00, Dark Green: #004D40, BG: #0A0A0A) -->
+    <!-- Application Structure Plan: A single-page, scrollable infographic to visualize the bess_revenue_strategy.md article. Structure: 1. Hero (The Great Divide). 2. Market Archetype Comparison (HTML Cards). 3. Revenue Stacking Pillars (HTML Diagram). 4. Arbitrage Dilemma (Chart.js Donut). 5. Degradation Risk (Chart.js Line Chart). 6. Contract Solution (HTML Cards). This narrative flow guides the user from the high-level financial problem to the specific, engineered solution, maximizing clarity. -->
+    <!-- Visualization & Content Choices: 
+        - Great Divide (IRR): Goal: Inform. Method: Large Stat Cards (HTML/CSS). Justification: High-impact way to show the 7-8% vs 15-22% split. No SVG.
+        - Market Archetypes: Goal: Compare. Method: 2-column HTML/CSS cards. Justification: Clear side-by-side text comparison of Archetype 1 vs 2. No SVG.
+        - Revenue Pillars: Goal: Organize. Method: 3-part HTML/CSS stacked diagram. Justification: Visually represents the "Debt Floor", "Engine", and "Premium" layers. No SVG.
+        - DAM/ID Split: Goal: Inform (Proportion). Method: Chart.js Donut Chart. Justification: Best for showing the 70-80% DAM allocation vs 20-30% ID. Uses Canvas.
+        - Degradation Risk: Goal: Relationships. Method: Chart.js Line Chart. Justification: Plots "Conservative" vs "Aggressive" cycling NPV over time to show the "NPV Cliff" from the source text's table. Uses Canvas.
+        - Contract Solution: Goal: Compare. Method: 2-column HTML/CSS cards. Justification: Compares Hybrid vs. Standard Tolling models. No SVG.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+</head>
+<body class="antialiased">
+
+    <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+
+        <!-- Section 1: Hero / The Great Divide -->
+        <section class="text-center mb-24">
+            <h1 class="text-4xl md:text-6xl font-black text-neon mb-6">The Great Divide in BESS Returns</h1>
+            <p class="text-xl md:text-2xl text-text-medium max-w-3xl mx-auto mb-12">
+                Why are some BESS projects locked into low single-digit returns while others are engineered to capture 15-22% IRR? The difference isn't technology—it's **financial engineering**.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+                <div class="stat-card border-accent-blue shadow-lg shadow-blue-500/10">
+                    <div class="stat-title">"The Stability Path" (Archetype 1)</div>
+                    <div class="stat-value text-accent-blue">7-8%</div>
+                    <div class="text-text-medium mt-2">Fixed-return, conservative templates.</div>
+                </div>
+                <div class="stat-card border-neon shadow-lg shadow-lime-500/10">
+                    <div class="stat-title">"The Alpha Path" (Archetype 2)</div>
+                    <div class="stat-value text-neon">15-22%</div>
+                    <div class="text-text-medium mt-2">Dynamic, volatility-capture models.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Market Archetypes -->
+        <section class="mb-24">
+            <h2 class="text-3xl md:text-4xl font-black text-center mb-12">Step 1: Diagnose Your Market Archetype ⚖️</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Archetype 1 Card -->
+                <div class="card p-8 rounded-xl">
+                    <h3 class="text-2xl font-bold mb-4 text-accent-blue">🛡️ Archetype 1: High-Stability Markets</h3>
+                    <p class="text-text-medium mb-6">Mature markets with low price spreads, strong capacity payments, and liquid forward markets. Arbitrage is marginal.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center"><span class="text-accent-blue font-bold text-xl mr-3">📉</span> <strong>Low Price Spreads:</strong> Arbitrage is minimal.</li>
+                        <li class="flex items-center"><span class="text-accent-blue font-bold text-xl mr-3">💵</span> <strong>Strong Capacity Payments:</strong> Revenue is anchored by fixed, regulated contracts.</li>
+                        <li class="flex items-center"><span class="text-accent-blue font-bold text-xl mr-3">⚙️</span> <strong>Dominant Ancillary Services:</strong> High certainty but low-margin returns due to competition.</li>
+                    </ul>
+                    <div class="bg-blue-900 text-blue-100 p-4 rounded-lg mt-6">
+                        <strong>Strategic Mandate:</strong> Model as a **low-risk infrastructure asset**. Prioritize certainty and debt coverage over market upside.
+                    </div>
+                </div>
+                <!-- Archetype 2 Card -->
+                <div class="card p-8 rounded-xl border-neon">
+                    <h3 class="text-2xl font-bold mb-4 text-neon">⚡ Archetype 2: Structurally Volatile Grids</h3>
+                    <p class="text-text-medium mb-6">Markets with rapid, imbalanced renewable penetration, creating extreme structural price swings and high-margin arbitrage.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center"><span class="text-neon font-bold text-xl mr-3">📈</span> <strong>Extreme Price Spreads:</strong> Daily swings can exceed €150/MWh, the primary source of alpha.</li>
+                        <li class="flex items-center"><span class="text-neon font-bold text-xl mr-3">🚧</span> <strong>Developing Fixed Revenue:</strong> Forces reliance on energy trading, shifting risk to equity for higher returns.</li>
+                        <li class="flex items-center"><span class="text-neon font-bold text-xl mr-3">🧊</span> <strong>Liquidity Constraints:</strong> Intraday markets may be too thin for large-scale trading, a critical modeling risk.</li>
+                    </ul>
+                    <div class="bg-green-900 text-green-100 p-4 rounded-lg mt-6">
+                        <strong>Strategic Mandate:</strong> Model as a **financial trading asset**. Prioritize operational flexibility to capture the uncapped volatility premium.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Revenue Stacking Pillars -->
+        <section class="mb-24">
+            <h2 class="text-3xl md:text-4xl font-black text-center mb-12">Step 2: Engineer the Revenue Stack 🏗️</h2>
+            <p class="text-lg text-text-medium max-w-3xl mx-auto text-center mb-12">A bankable BESS model isn't one revenue stream; it's a layered hierarchy built for financial resilience and high performance.</p>
+            <div class="max-w-3xl mx-auto space-y-4">
+                <!-- Pillar 3: Alpha Generation -->
+                <div class="card p-6 rounded-lg text-center border-neon">
+                    <div class="text-xs font-bold uppercase text-neon tracking-wider">Pillar 3: Alpha Generation (The Premium)</div>
+                    <h3 class="text-2xl font-bold mt-2">💹 Intraday Arbitrage & Hybrid Tolling</h3>
+                    <p class="text-text-medium mt-2">Opportunistic, high-margin streams that drive premium equity returns (15-22% IRR). High risk, high reward.</p>
+                </div>
+                <!-- Pillar 2: Core Arbitrage -->
+                <div class="card p-6 rounded-lg text-center border-lime-600">
+                    <div class="text-xs font-bold uppercase text-lime-400 tracking-wider">Pillar 2: The Core Arbitrage (The Engine)</div>
+                    <h3 class="text-2xl font-bold mt-2">⚙️ Day-Ahead Market (DAM) Arbitrage</h3>
+                    <p class="text-text-medium mt-2">The primary BESS function: time-shifting energy. In Volatile Grids, this is the largest, most structural source of profit.</p>
+                </div>
+                <!-- Pillar 1: Debt Floor -->
+                <div class="card p-6 rounded-lg text-center border-blue-600">
+                    <div class="text-xs font-bold uppercase text-blue-400 tracking-wider">Pillar 1: The Debt Floor (Stability)</div>
+                    <h3 class="text-2xl font-bold mt-2">🏦 Capacity Mechanisms & Ancillary Services</h3>
+                    <p class="text-text-medium mt-2">Guaranteed, low-risk, contracted cash flows (CMs, FFR) essential for covering debt service and securing project finance.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: The Arbitrage Dilemma (DAM vs. ID) -->
+        <section class="mb-24">
+            <h2 class="text-3xl md:text-4xl font-black text-center mb-6">Step 3: Solve the Arbitrage Dilemma ⚖️</h2>
+            <p class="text-lg text-text-medium max-w-3xl mx-auto text-center mb-12">The biggest modeling flaw is assuming 50/50 DAM/ID revenue. In Volatile Grids, Intraday (ID) markets are often **illiquid**, creating a "Liquidity Trap" that can kill project returns. A bankable model must be realistic.</p>
+            <div class="card p-8 rounded-xl">
+                <h3 class="text-2xl font-bold text-center mb-8">Bankable Revenue Split (Volatile Grids)</h3>
+                <div class="chart-container" style="max-height: 350px;">
+                    <canvas id="damIdChart"></canvas>
+                </div>
+                <p class="text-center text-text-medium mt-6">Relying on illiquid ID markets for 50% of revenue is a recipe for failure. The bankable model allocates **70-80%** of arbitrage revenue to the deep, structural **Day-Ahead Market (DAM)**.</p>
+            </div>
+        </section>
+
+        <!-- Section 5: Degradation Risk -->
+        <section class="mb-24">
+            <h2 class="text-3xl md:text-4xl font-black text-center mb-6">Step 4: Model the Degradation Trade-Off 📉🔋</h2>
+            <p class="text-lg text-text-medium max-w-3xl mx-auto text-center mb-12">Every revenue-generating cycle consumes battery life. An aggressive, multi-cycle strategy can **double revenue** but force a **full CAPEX replacement** years early, destroying the project's Net Present Value (NPV).</p>
+            <div class="card p-8 rounded-xl">
+                <h3 class="text-2xl font-bold text-center mb-8">The "NPV Cliff": Conservative vs. Aggressive Cycling</h3>
+                <div class="chart-container">
+                    <canvas id="degradationChart"></canvas>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6 text-center">
+                    <div>
+                        <h4 class="text-lg font-bold text-neon">Conservative (300 Cycles/Yr)</h4>
+                        <p class="text-text-medium text-sm">Stays within warranty, max 12-yr life. Highest long-term NPV.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-accent-red">Aggressive (600 Cycles/Yr)</h4>
+                        <p class="text-text-medium text-sm">Doubles revenue but voids warranty, forces replacement at Year 6. Decimates NPV.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: The Solution (Contract Engineering) -->
+        <section class="mb-24">
+            <h2 class="text-3xl md:text-4xl font-black text-center mb-12">Step 5: Engineer the Contract for Alpha ✍️</h2>
+            <p class="text-lg text-text-medium max-w-3xl mx-auto text-center mb-12">In Alpha-Capture markets, the contract is your financial weapon. A standard tolling agreement suffocates returns. The **Hybrid Tolling Model** is the non-negotiable structure for bankability *and* upside.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Standard Contract -->
+                <div class="card p-8 rounded-xl">
+                    <h3 class="text-2xl font-bold mb-4 text-accent-red">Standard Fixed Contract</h3>
+                    <p class="text-text-medium mb-6">A simple, fixed-fee agreement. You get 100% security but **zero upside**. This leaves all the high-margin volatility profits on the table.</p>
+                    <div class="stat-card border-accent-red mt-6">
+                        <div class="stat-title">Equity Return</div>
+                        <div class="stat-value text-accent-red">~7-8%</div>
+                        <div class="text-text-medium mt-2">Capped. Predictable. Low.</div>
+                    </div>
+                </div>
+                <!-- Hybrid Contract -->
+                <div class="card p-8 rounded-xl border-neon">
+                    <h3 class="text-2xl font-bold mb-4 text-neon">Hybrid Tolling Model</h3>
+                    <p class="text-text-medium mb-6">A smart split: **60-70%** of capacity is fixed (for debt), while **30-40%** is merchant (for equity upside).</p>
+                    <ul class="space-y-3 mt-6">
+                        <li class="flex items-start"><span class="text-neon font-bold text-xl mr-3">🏦</span> <strong>The Debt Floor:</strong> Fixed revenue covers 100% of debt service. **Project is bankable.**</li>
+                        <li class="flex items-start"><span class="text-neon font-bold text-xl mr-3">⚡</span> <strong>The Equity Upside:</strong> Uncapped exposure to DAM volatility drives premium returns.</li>
+                    </ul>
+                    <div class="stat-card border-neon mt-6">
+                        <div class="stat-title">Equity Return</div>
+                        <div class="stat-value text-neon">15-22%</div>
+                        <div class="text-text-medium mt-2">Bankable Floor + Uncapped Upside.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: Conclusion -->
+        <section class="text-center">
+            <h2 class="text-4xl md:text-5xl font-black text-neon mb-6">Conclusion: The Mandate for Financial Engineering</h2>
+            <p class="text-xl text-text-medium max-w-3xl mx-auto">
+                The difference between 7% and 22% IRR is not in the battery cells; it's in the **contract clauses** and **financial model**. Success in modern BESS investment requires diagnosing the market archetype, engineering a hybrid contract, and optimizing for lifecycle value, not just short-term revenue.
+            </p>
+        </section>
+
+    </div>
+
+    <script>
+        function wrapLabels(labels, maxWidth) {
+            return labels.map(label => {
+                if (typeof label !== 'string' || label.length <= maxWidth) {
+                    return label;
+                }
+                const words = label.split(' ');
+                const lines = [];
+                let currentLine = '';
+                words.forEach(word => {
+                    if ((currentLine + ' ' + word).trim().length > maxWidth) {
+                        lines.push(currentLine.trim());
+                        currentLine = word;
+                    } else {
+                        currentLine = (currentLine + ' ' + word).trim();
+                    }
+                });
+                lines.push(currentLine.trim());
+                return lines;
+            });
+        }
+
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            } else {
+                return label;
+            }
+        };
+
+        // Chart 1: DAM/ID Split
+        const damIdCtx = document.getElementById('damIdChart');
+        if (damIdCtx) {
+            new Chart(damIdCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Day-Ahead Market (DAM) Allocation', 'Intraday (ID) Allocation'],
+                    datasets: [{
+                        label: 'Bankable Revenue Split',
+                        data: [75, 25],
+                        backgroundColor: [
+                            '#7CFC00', // Neon Green
+                            '#004D40', // Dark Green
+                        ],
+                        borderColor: '#1F2937',
+                        borderWidth: 4,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '60%',
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                color: '#F0F0F0',
+                                font: { size: 14, family: 'Inter' }
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: tooltipTitleCallback
+                            },
+                            titleFont: { family: 'Inter' },
+                            bodyFont: { family: 'Inter' },
+                            backgroundColor: '#0A0A0A',
+                            titleColor: '#F0F0F0',
+                            bodyColor: '#F0F0F0',
+                            borderColor: '#004D40',
+                            borderWidth: 1
+                        }
+                    }
+                }
+            });
+        }
+
+        // Chart 2: Degradation Risk
+        const degradationCtx = document.getElementById('degradationChart');
+        if (degradationCtx) {
+            const labels = wrapLabels(['Year 0', 'Year 2', 'Year 4', 'Year 6', 'Year 8', 'Year 10', 'Year 12'], 16);
+            
+            const conservativeData = [100, 95, 90, 85, 80, 75, 70]; 
+            const aggressiveData = [100, 80, 60, 40, 35, 30, 25]; 
+
+            new Chart(degradationCtx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Conservative (300 Cycles/Yr)',
+                            data: conservativeData.map(val => val * 1.5), 
+                            borderColor: '#7CFC00',
+                            backgroundColor: 'rgba(124, 252, 0, 0.2)',
+                            fill: true,
+                            tension: 0.1,
+                            pointBackgroundColor: '#7CFC00',
+                            pointRadius: 4
+                        },
+                        {
+                            label: 'Aggressive (600 Cycles/Yr)',
+                            data: aggressiveData.map(val => val * 1.5), 
+                            borderColor: '#DC2626',
+                            backgroundColor: 'rgba(220, 38, 38, 0.2)',
+                            fill: true,
+                            tension: 0.1,
+                            pointBackgroundColor: '#DC2626',
+                            pointRadius: 4
+                        },
+                        {
+                            label: 'NPV Cliff (Aggressive CAPEX Event)',
+                            data: [null, null, null, 150, 60, 50, 45], 
+                            borderColor: '#DC2626',
+                            borderDash: [5, 5],
+                            fill: false,
+                            tension: 0.1,
+                            pointRadius: 0
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Project NPV / Asset Health (%)',
+                                color: '#9CA3AF',
+                                font: { size: 14, family: 'Inter' }
+                            },
+                            ticks: {
+                                color: '#9CA3AF',
+                                font: { family: 'Inter' }
+                            },
+                            grid: {
+                                color: '#374151'
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Project Year',
+                                color: '#9CA3AF',
+                                font: { size: 14, family: 'Inter' }
+                            },
+                            ticks: {
+                                color: '#9CA3AF',
+                                font: { family: 'Inter' }
+                            },
+                            grid: {
+                                display: false
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                color: '#F0F0F0',
+                                font: { size: 14, family: 'Inter' }
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: tooltipTitleCallback
+                            },
+                            titleFont: { family: 'Inter' },
+                            bodyFont: { family: 'Inter' },
+                            backgroundColor: '#0A0A0A',
+                            titleColor: '#F0F0F0',
+                            bodyColor: '#F0F0F0',
+                            borderColor: '#004D40',
+                            borderWidth: 1,
+                            mode: 'index',
+                            intersect: false,
+                        }
+                    },
+                    interaction: {
+                        mode: 'index',
+                        intersect: false,
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
