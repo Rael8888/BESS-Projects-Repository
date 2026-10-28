@@ -1,0 +1,557 @@
+{
+ "generated": "2026-10-28T14:33:10.837Z",
+ "projects": {
+  "campia": {
+   "name": "Project Câmpia",
+   "capacity": "50 MW / 200 MWh",
+   "location": "Romania",
+   "summary": "Standalone 4-hour storage, Romania · acquisition from developer, then build to COD",
+   "stage": "Pre-SPA",
+   "sample": true,
+   "items": [
+    {
+     "id": "407f912a036f81c39d59ce187c93283e",
+     "lane": "commercial",
+     "name": "NDA & teaser review",
+     "s": "2026-07-01",
+     "e": "2026-08-10",
+     "st": "done",
+     "ph": "pre",
+     "own": "RENEWD",
+     "dep": [],
+     "note": "",
+     "url": "https://app.notion.com/p/407f912a036f81c39d59ce187c93283e"
+    },
+    {
+     "id": "407f912a036f816d8720c9eb9c6df5b4",
+     "lane": "commercial",
+     "name": "LOI signed",
+     "s": "2026-09-15",
+     "gate": 1,
+     "st": "done",
+     "ph": "pre",
+     "own": "RENEWD / Seller",
+     "dep": [],
+     "note": "",
+     "url": "https://app.notion.com/p/407f912a036f816d8720c9eb9c6df5b4"
+    },
+    {
+     "id": "407f912a036f814198a0c4f8131aea85",
+     "lane": "commercial",
+     "name": "Exclusivity",
+     "s": "2026-09-15",
+     "e": "2026-12-15",
+     "st": "ontrack",
+     "ph": "pre",
+     "own": "Seller",
+     "dep": [
+      "407f912a036f816d8720c9eb9c6df5b4"
+     ],
+     "note": "90-day exclusivity. Extension clause if DD findings are open at day 75.",
+     "url": "https://app.notion.com/p/407f912a036f814198a0c4f8131aea85"
+    },
+    {
+     "id": "407f912a036f81f28326c28f29896cae",
+     "lane": "commercial",
+     "name": "Term sheet",
+     "s": "2026-10-05",
+     "e": "2026-11-27",
+     "st": "ontrack",
+     "ph": "pre",
+     "own": "RENEWD",
+     "crit": 1,
+     "dep": [
+      "407f912a036f816d8720c9eb9c6df5b4"
+     ],
+     "note": "",
+     "url": "https://app.notion.com/p/407f912a036f81f28326c28f29896cae"
+    },
+    {
+     "id": "407f912a036f811d992dc1596d0c2779",
+     "lane": "commercial",
+     "name": "SPA drafting & negotiation",
+     "s": "2026-12-01",
+     "e": "2027-03-19",
+     "st": "not",
+     "ph": "pre",
+     "own": "Legal counsel",
+     "crit": 1,
+     "dep": [
+      "407f912a036f81f28326c28f29896cae",
+      "407f912a036f81d3b2b1cc5a6fb2c76c",
+      "407f912a036f81639db3f00567362fb8"
+     ],
+     "note": "",
+     "url": "https://app.notion.com/p/407f912a036f811d992dc1596d0c2779"
+    },
+    {
+     "id": "407f912a036f81208a5bc6f2c32e0e08",
+     "lane": "commercial",
+     "name": "SPA signing",
+     "s": "2027-03-31",
+     "gate": 1,
+     "major": 1,
+     "st": "not",
+     "ph": "pre",
+     "own": "RENEWD / Seller",
+     "crit": 1,
+     "dep": [
+      "407f912a036f811d992dc1596d0c2779"
+     ],
+     "note": "",
+     "url": "https://app.notion.com/p/407f912a036f81208a5bc6f2c32e0e08"
+    },
+    {
+     "id": "407f912a036f81ec87c4ff0d39782f1b",
+     "lane": "commercial",
+     "name": "Conditions precedent",
+     "s": "2027-04-01",
+     "e": "2027-06-25",
+     "st": "not",
+     "ph": "impl",
+     "own": "Seller",
+     "crit": 1,
+     "dep": [
+      "407f912a036f81208a5bc6f2c32e0e08",
+      "407f912a036f8142aa62df24df4940fd"
+     ],
+     "note": "Main CPs: building permit issued, connection contract signed, no change to ATR.",
+     "url": "https://app.notion.com/p/407f912a036f81ec87c4ff0d39782f1b"
+    },
+    {
+     "id": "407f912a036f81e693b8ec192ac54efb",
+     "lane": "commercial",
+     "name": "Closing",
+     "s": "2027-06-30",
+     "gate": 1,
+     "major": 1,
+     "st": "not",
+     "ph": "impl",
+     "own": "RENEWD / Seller",
+     "crit": 1,
+     "dep": [
+      "407f912a036f81ec87c4ff0d39782f1b"
+     ],
+     "note": "",
+     "url": "https://app.notion.com/p/407f912a036f81e693b8ec192ac54efb"
+    },
+    {
+     "id": "407f912a036f814c90b9eb65265b1843",
+     "lane": "dd",
+     "name": "Grid study review",
+     "s": "2026-10-01",
+     "e": "2026-10-23",
+     "st": "blocked",
+     "ph": "pre",
+     "own": "Technical adviser",
+     "dep": [],
+     "note": "Waiting on the DSO to share the grid impact study behind the ATR. Chase the seller to request it formally.",
+     "url": "https://app.notion.com/p/407f912a036f814c90b9eb65265b1843"
+    },
+    {
+     "id": "407f912a036f81d3b2b1cc5a6fb2c76c",
+     "lane": "dd",
+     "name": "Legal DD",
+     "s": "2026-10-12",
+     "e": "2026-12-11",
+     "st": "ontrack",
+     "ph": "pre",
+     "own": "Legal counsel",
+     "dep": [
+      "407f912a036f816d8720c9eb9c6df5b4"
+     ],
+     "note": "",
+     "url": "https://app.notion.com/p/407f912a036f81d3b2b1cc5a6fb2c76c"
+    },
+    {
+     "id": "407f912a036f81639db3f00567362fb8",
+     "lane": "dd",
+     "name": "Technical DD",
+     "s": "2026-10-26",
+     "e": "2027-01-15",
+     "st": "ontrack",
+     "ph": "pre",
+     "own": "Technical adviser",
+     "dep": [
+      "407f912a036f814c90b9eb65265b1843"
+     ],
+     "note": "",
+     "url": "https://app.notion.com/p/407f912a036f81639db3f00567362fb8"
+    },
+    {
+     "id": "407f912a036f8192b7ceec06aa603c3e",
+     "lane": "dd",
+     "name": "Financial model & tax DD",
+     "s": "2026-11-02",
+     "e": "2027-01-22",
+     "st": "not",
+     "ph": "pre",
+     "own": "RENEWD",
+     "dep": [],
+     "note": "",
+     "url": "https://app.notion.com/p/407f912a036f8192b7ceec06aa603c3e"
+    },
+    {
+     "id": "407f912a036f816ba4d1dabd7445202c",
+     "lane": "permit",
+     "name": "Urbanism certificate (CU)",
+     "s": "2026-06-15",
+     "e": "2026-08-14",
+     "st": "done",
+     "ph": "pre",
+     "own": "Seller",
+     "dep": [],
+     "note": "",
+     "url": "https://app.notion.com/p/407f912a036f816ba4d1dabd7445202c"
+    },
+    {
+     "id": "407f912a036f812191e0f2edefc85c49",
+     "lane": "permit",
+     "name": "Environmental decision",
+     "s": "2026-08-17",
+     "e": "2026-12-18",
+     "st": "risk",
+     "ph": "pre",
+     "own": "Seller",
+     "crit": 1,
+     "dep": [
+      "407f912a036f816ba4d1dabd7445202c"
+     ],
+     "note": "Environmental agency asked for an additional noise study. Public consultation slipped about 4 weeks.",
+     "url": "https://app.notion.com/p/407f912a036f812191e0f2edefc85c49"
+    },
+    {
+     "id": "407f912a036f81e0a96be73253f7155f",
+     "lane": "permit",
+     "name": "PUZ approval",
+     "s": "2026-09-14",
+     "e": "2027-02-26",
+     "st": "ontrack",
+     "ph": "pre",
+     "own": "Seller",
+     "crit": 1,
+     "dep": [
+      "407f912a036f816ba4d1dabd7445202c"
+     ],
+     "note": "",
+     "url": "https://app.notion.com/p/407f912a036f81e0a96be73253f7155f"
+    },
+    {
+     "id": "407f912a036f8142aa62df24df4940fd",
+     "lane": "permit",
+     "name": "Building permit (AC)",
+     "s": "2027-03-01",
+     "e": "2027-05-28",
+     "st": "not",
+     "ph": "impl",
+     "own": "Seller",
+     "crit": 1,
+     "dep": [
+      "407f912a036f812191e0f2edefc85c49",
+      "407f912a036f81e0a96be73253f7155f"
+     ],
+     "note": "",
+     "url": "https://app.notion.com/p/407f912a036f8142aa62df24df4940fd"
+    },
+    {
+     "id": "407f912a036f810ca6e9d0b43de56d5e",
+     "lane": "grid",
+     "name": "ATR issued",
+     "s": "2026-06-30",
+     "gate": 1,
+     "st": "done",
+     "ph": "pre",
+     "own": "DSO",
+     "dep": [],
+     "note": "",
+     "url": "https://app.notion.com/p/407f912a036f810ca6e9d0b43de56d5e"
+    },
+    {
+     "id": "407f912a036f81e18ea4c1b23e7f9275",
+     "lane": "grid",
+     "name": "ATR guarantee posted",
+     "s": "2026-07-15",
+     "e": "2026-08-31",
+     "st": "done",
+     "ph": "pre",
+     "own": "Seller",
+     "dep": [
+      "407f912a036f810ca6e9d0b43de56d5e"
+     ],
+     "note": "",
+     "url": "https://app.notion.com/p/407f912a036f81e18ea4c1b23e7f9275"
+    },
+    {
+     "id": "407f912a036f81b8837efee35c4494f3",
+     "lane": "grid",
+     "name": "Connection contract",
+     "s": "2026-11-16",
+     "e": "2027-02-12",
+     "st": "not",
+     "ph": "pre",
+     "own": "Seller / DSO",
+     "dep": [
+      "407f912a036f81e18ea4c1b23e7f9275"
+     ],
+     "note": "",
+     "url": "https://app.notion.com/p/407f912a036f81b8837efee35c4494f3"
+    },
+    {
+     "id": "407f912a036f81fd8767eac99eee5027",
+     "lane": "grid",
+     "name": "Grid connection works",
+     "s": "2027-10-04",
+     "e": "2028-05-26",
+     "st": "not",
+     "ph": "impl",
+     "own": "DSO",
+     "crit": 1,
+     "dep": [
+      "407f912a036f81b8837efee35c4494f3",
+      "407f912a036f81e693b8ec192ac54efb"
+     ],
+     "note": "",
+     "url": "https://app.notion.com/p/407f912a036f81fd8767eac99eee5027"
+    },
+    {
+     "id": "407f912a036f81d99dc4c2ab8c065d7f",
+     "lane": "grid",
+     "name": "Energisation",
+     "s": "2028-06-30",
+     "gate": 1,
+     "st": "not",
+     "ph": "impl",
+     "own": "DSO",
+     "crit": 1,
+     "dep": [
+      "407f912a036f81fd8767eac99eee5027"
+     ],
+     "note": "",
+     "url": "https://app.notion.com/p/407f912a036f81d99dc4c2ab8c065d7f"
+    },
+    {
+     "id": "407f912a036f816c8b71c50097a625e9",
+     "lane": "finance",
+     "name": "Lender mandate",
+     "s": "2027-01-11",
+     "e": "2027-03-26",
+     "st": "not",
+     "ph": "pre",
+     "own": "RENEWD",
+     "dep": [
+      "407f912a036f8192b7ceec06aa603c3e"
+     ],
+     "note": "",
+     "url": "https://app.notion.com/p/407f912a036f816c8b71c50097a625e9"
+    },
+    {
+     "id": "407f912a036f818786dee433a0e24a71",
+     "lane": "finance",
+     "name": "Financing documentation",
+     "s": "2027-04-01",
+     "e": "2027-07-16",
+     "st": "not",
+     "ph": "impl",
+     "own": "Lender",
+     "dep": [
+      "407f912a036f816c8b71c50097a625e9"
+     ],
+     "note": "",
+     "url": "https://app.notion.com/p/407f912a036f818786dee433a0e24a71"
+    },
+    {
+     "id": "407f912a036f810cb3a1d7f51720632c",
+     "lane": "finance",
+     "name": "Financial close",
+     "s": "2027-07-30",
+     "gate": 1,
+     "major": 1,
+     "st": "not",
+     "ph": "impl",
+     "own": "Lender",
+     "crit": 1,
+     "dep": [
+      "407f912a036f818786dee433a0e24a71",
+      "407f912a036f81e693b8ec192ac54efb"
+     ],
+     "note": "",
+     "url": "https://app.notion.com/p/407f912a036f810cb3a1d7f51720632c"
+    },
+    {
+     "id": "407f912a036f8141be7be57dfa209033",
+     "lane": "proc",
+     "name": "BESS supplier RFP",
+     "s": "2027-01-18",
+     "e": "2027-04-16",
+     "st": "not",
+     "ph": "pre",
+     "own": "RENEWD",
+     "dep": [],
+     "note": "",
+     "url": "https://app.notion.com/p/407f912a036f8141be7be57dfa209033"
+    },
+    {
+     "id": "407f912a036f8184bbe0f9962fd40487",
+     "lane": "proc",
+     "name": "EPC tender & award",
+     "s": "2027-03-01",
+     "e": "2027-07-23",
+     "st": "not",
+     "ph": "impl",
+     "own": "RENEWD",
+     "dep": [
+      "407f912a036f8141be7be57dfa209033"
+     ],
+     "note": "",
+     "url": "https://app.notion.com/p/407f912a036f8184bbe0f9962fd40487"
+    },
+    {
+     "id": "407f912a036f81d3b8dbcb374a832cd8",
+     "lane": "proc",
+     "name": "HV transformer manufacture",
+     "s": "2027-08-02",
+     "e": "2028-05-12",
+     "st": "not",
+     "ph": "impl",
+     "own": "EPC",
+     "crit": 1,
+     "dep": [
+      "407f912a036f810cb3a1d7f51720632c"
+     ],
+     "note": "Longest lead item. Consider a paid slot reservation before financial close.",
+     "url": "https://app.notion.com/p/407f912a036f81d3b8dbcb374a832cd8"
+    },
+    {
+     "id": "407f912a036f81d291ffdeaf84c36a64",
+     "lane": "proc",
+     "name": "Battery containers: build & ship",
+     "s": "2027-10-01",
+     "e": "2028-03-31",
+     "st": "not",
+     "ph": "impl",
+     "own": "BESS supplier",
+     "dep": [
+      "407f912a036f8129a88bed227e117213"
+     ],
+     "note": "",
+     "url": "https://app.notion.com/p/407f912a036f81d291ffdeaf84c36a64"
+    },
+    {
+     "id": "407f912a036f8129a88bed227e117213",
+     "lane": "build",
+     "name": "Notice to proceed",
+     "s": "2027-08-16",
+     "gate": 1,
+     "major": 1,
+     "st": "not",
+     "ph": "impl",
+     "own": "RENEWD",
+     "crit": 1,
+     "dep": [
+      "407f912a036f810cb3a1d7f51720632c",
+      "407f912a036f8184bbe0f9962fd40487"
+     ],
+     "note": "",
+     "url": "https://app.notion.com/p/407f912a036f8129a88bed227e117213"
+    },
+    {
+     "id": "407f912a036f8126aa20f6c4dc8326cc",
+     "lane": "build",
+     "name": "Civil works & foundations",
+     "s": "2027-09-06",
+     "e": "2028-01-28",
+     "st": "not",
+     "ph": "impl",
+     "own": "EPC",
+     "dep": [
+      "407f912a036f8129a88bed227e117213"
+     ],
+     "note": "",
+     "url": "https://app.notion.com/p/407f912a036f8126aa20f6c4dc8326cc"
+    },
+    {
+     "id": "407f912a036f813b8855e288be5eb276",
+     "lane": "build",
+     "name": "Equipment installation",
+     "s": "2028-02-07",
+     "e": "2028-06-23",
+     "st": "not",
+     "ph": "impl",
+     "own": "EPC",
+     "crit": 1,
+     "dep": [
+      "407f912a036f8126aa20f6c4dc8326cc",
+      "407f912a036f81d291ffdeaf84c36a64"
+     ],
+     "note": "",
+     "url": "https://app.notion.com/p/407f912a036f813b8855e288be5eb276"
+    },
+    {
+     "id": "407f912a036f8103badbdf9e210aecc8",
+     "lane": "build",
+     "name": "Commissioning & tests",
+     "s": "2028-07-03",
+     "e": "2028-08-25",
+     "st": "not",
+     "ph": "impl",
+     "own": "EPC",
+     "crit": 1,
+     "dep": [
+      "407f912a036f813b8855e288be5eb276",
+      "407f912a036f81d99dc4c2ab8c065d7f"
+     ],
+     "note": "",
+     "url": "https://app.notion.com/p/407f912a036f8103badbdf9e210aecc8"
+    },
+    {
+     "id": "407f912a036f81a79a92e3ecfae9436f",
+     "lane": "build",
+     "name": "PIF & ANRE licence",
+     "s": "2028-08-01",
+     "e": "2028-09-22",
+     "st": "not",
+     "ph": "impl",
+     "own": "RENEWD",
+     "dep": [
+      "407f912a036f8103badbdf9e210aecc8"
+     ],
+     "note": "",
+     "url": "https://app.notion.com/p/407f912a036f81a79a92e3ecfae9436f"
+    },
+    {
+     "id": "407f912a036f819093e6e14817904e70",
+     "lane": "build",
+     "name": "Balancing qualification",
+     "s": "2028-08-14",
+     "e": "2028-10-13",
+     "st": "not",
+     "ph": "impl",
+     "own": "Transelectrica",
+     "dep": [
+      "407f912a036f8103badbdf9e210aecc8"
+     ],
+     "note": "Qualification for balancing services can run past COD. Revenue starts on the wholesale market first.",
+     "url": "https://app.notion.com/p/407f912a036f819093e6e14817904e70"
+    },
+    {
+     "id": "407f912a036f8119b9defc99add9095b",
+     "lane": "build",
+     "name": "COD",
+     "s": "2028-09-29",
+     "gate": 1,
+     "major": 1,
+     "st": "not",
+     "ph": "impl",
+     "own": "RENEWD",
+     "crit": 1,
+     "dep": [
+      "407f912a036f8103badbdf9e210aecc8",
+      "407f912a036f81a79a92e3ecfae9436f"
+     ],
+     "note": "",
+     "url": "https://app.notion.com/p/407f912a036f8119b9defc99add9095b"
+    }
+   ]
+  }
+ }
+}

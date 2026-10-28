@@ -1,0 +1,36 @@
+name: Timeline sync from Notion
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: timeline-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Pull milestones from Notion
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          PROJECTS_DS: 9dca61f2-9b37-4f87-9b04-a4b415377910
+          MILESTONES_DS: 79a03719-ab06-4ae7-ac7a-2a7c20a55529
+        run: node timeline/sync/sync-notion.mjs
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- timeline/data.json; then exit 0; fi
+          git config user.name "renewd-timeline-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add timeline/data.json
+          git commit -m "Timeline: sync from Notion"
+          git push
